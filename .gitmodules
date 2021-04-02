@@ -1,0 +1,3 @@
+[submodule "end-to-end-SLU"]
+	path = end-to-end-SLU
+	url = https://github.com/robustEval/end-to-end-SLU.git

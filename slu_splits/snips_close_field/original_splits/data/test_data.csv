@@ -1,0 +1,170 @@
+path,speakerId,transcription,intent,intentLbl
+../smart-lights-en-close-field/speech_corpus/audio/218.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,Could you increase the brightness of the lights?,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/760.wav,7f04b6d2-1f2a-4452-80e6-3248409fe5d2,Make the lights blue.,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/334.wav,143921a6-6caa-417f-bd7e-2732023270c1,I need lights on over the toilets,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/1366.wav,d30d0d55-2974-4a22-ac9e-d4d2a95ac702,bring up the lights,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/698.wav,01356b70-791d-42c4-b14b-56fefa67358f,Make lights pink,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/792.wav,f0f71ab4-dd42-43f7-bd05-7d1950326935,Make the living room light dimmer,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/541.wav,61febf20-bc56-49b9-8e3a-e2ec25b362e6,I'd prefer it to be brighter,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/282.wav,9f6716f3-279d-4489-8e33-500a052465cd,Get the laundry room lights up to twenty two,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/1352.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Would you turn on my basement lights?,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/464.wav,e23027b0-4121-4be8-9b65-f34550c3f4de,I want the patio room light off,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/922.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Please turn the kitchen lights on.,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/1204.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Turn on lights in the backyard,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/1077.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Switch the lights green.,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/761.wav,ffd85e10-f320-427f-b63e-01e81f768397,Make the lights brighter,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/1282.wav,62c59086-3e46-4c49-85d6-047f69928fc9,Turn the lights off in the laundry room,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/1585.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,switch lights on,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/11.wav,4373a208-efd7-4eea-9440-94f52145cd78,Adjust the bedroom lights to ten percent,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/738.wav,9294d77a-9d94-4903-a978-af94ab79c0d9,Make the kids room brighter,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/557.wav,88eea37b-2670-4b5d-b1ba-28a1b638243f,In the entrance make the lights pink,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/1179.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,"Turn off the lights
+",SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/817.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Please activate the lights.,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/374.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,I want blue light,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/474.wav,d30d0d55-2974-4a22-ac9e-d4d2a95ac702,I want to brighten the laundry room,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/335.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,I need more light,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/1021.wav,9f6716f3-279d-4489-8e33-500a052465cd,Set the lights in the laundry room to seventy-three.,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/268.wav,143921a6-6caa-417f-bd7e-2732023270c1,Dim the lights.,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/835.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,Please change the lights to red in the cellar,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/142.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,Change backyard lighting to pink please,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/171.wav,f0f71ab4-dd42-43f7-bd05-7d1950326935,"Change the color of the lights to pink, please.",SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/617.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,It's too bright in here!,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/1084.wav,4373a208-efd7-4eea-9440-94f52145cd78,The basement lights must be switched on,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/1016.wav,9294d77a-9d94-4903-a978-af94ab79c0d9,Set the light brightness level to twenty,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/1309.wav,f0f71ab4-dd42-43f7-bd05-7d1950326935,Turn the lights to two in the house,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/1417.wav,bbdc474a-8064-4665-9144-585bfe589908,"do not waste the lights, decrease it please",DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/469.wav,61febf20-bc56-49b9-8e3a-e2ec25b362e6,I want the toilet lights to be on,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/158.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,Change the basement brightness to seventy-three.,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/188.wav,f0f71ab4-dd42-43f7-bd05-7d1950326935,Change the lighting to dim.,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/1619.wav,f0f71ab4-dd42-43f7-bd05-7d1950326935,turn all kitchen lights to pink color,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/952.wav,f0f71ab4-dd42-43f7-bd05-7d1950326935,Put the brightness in the shed at fifty.,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/811.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,"Ok google, Turn off lights in entire flat",SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/1135.wav,4373a208-efd7-4eea-9440-94f52145cd78,Turn down the brightness,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/531.wav,0f9d4a24-4d36-4378-98fd-3ddbe67d2f29,I'd like the lights to not be so bright,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/185.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,Change the light to pink,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/1358.wav,9294d77a-9d94-4903-a978-af94ab79c0d9,bathroom brightness to twenty two,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/1.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,Activate basement lights,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/1497.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,make all lights pink in color,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/1353.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,adjust brightness of lounge lights to a value of twenty two,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/1363.wav,143921a6-6caa-417f-bd7e-2732023270c1,boardroom is dark please turn on lights,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/1180.wav,4e1a0afa-74e0-4d34-a6cd-ae2d96067f0f,Turn off the lights at 4:30 pm,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/1307.wav,605a3d3d-973b-4b8e-93cf-3044c00e47b2,Turn the lights to a higher setting,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/294.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,"Google, shut off lights",SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/1193.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,Turn off the lights in this room.,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/415.wav,4373a208-efd7-4eea-9440-94f52145cd78,I want the entire appartment to be at two brightness,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/162.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Change the brightness to fifty in the entire appartment,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/1346.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Will you make the entrance lights red for the afternoon.,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/1633.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,turn off bed room lights,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/1394.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,change the patio lights to green,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/1407.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,dim the basement,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/721.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,Make the brightness of my lights thirty nine.,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/1443.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,in my kids bedroom change the brightness to fifty,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/930.wav,e23027b0-4121-4be8-9b65-f34550c3f4de,Please turn the lights off in this room,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/854.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Please increase the garage lights.,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/1458.wav,915b94e4-030e-4ecd-b864-c52ff00f9ebc,is it possible to turn down the light in the living room,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/719.wav,01efb0b6-4dc5-436e-9639-d313e761d7ad,Make the brightness at twelve percent,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/113.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,Can you set the cella room to seventy-three,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/1240.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Turn the bedroom to twenty,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/291.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,Go ahead and turn the laundry room lights up brighter,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/458.wav,61febf20-bc56-49b9-8e3a-e2ec25b362e6,I want the lights to be turned off,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/940.wav,550b9155-6601-488b-82c9-d316036fc144,Power on the lamps in the toilets,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/755.wav,74e9b845-0a5a-4af0-959b-5f4fcf28fed3,Make the lighting brighter in the living room,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/877.wav,4373a208-efd7-4eea-9440-94f52145cd78,Please set the light brightness level of basement to thirty nine,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/951.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,Put parking lights at level twelve,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/517.wav,c507814e-9454-4096-99ce-e54fe7c814b8,I'd like the brightness turned up,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/98.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,Can you please change the brightness in the lounge to thirty nine?,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/1509.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,make the lights red in the office,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/1184.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Turn off the lights in the basement,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/1595.wav,9b44ed56-3019-4bef-a688-833eec3e2059,switch the light to blue,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/1196.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,Turn off the lights to the toilets.,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/626.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,Kill the lights in the bedroom.,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/996.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,Set the brightness level to seventy-three,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/929.wav,01356b70-791d-42c4-b14b-56fefa67358f,Please turn the lights off in the garden,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/679.wav,acf3ffdb-fd5b-4245-958a-3441dbaff881,Make it brighter in here,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/434.wav,f0f71ab4-dd42-43f7-bd05-7d1950326935,I want the lights dimmed.,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/1127.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,Turn backyard lights off,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/190.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,Change the lights green,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/511.wav,915b94e4-030e-4ecd-b864-c52ff00f9ebc,I'd like it a little darker,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/289.wav,9f5beac6-1a2a-4d52-bca1-d0eff2f5ae54,Give me pink lights.,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/21.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Adjust the lighting to level twenty two,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/62.wav,9b44ed56-3019-4bef-a688-833eec3e2059,Can you change the kids room to red,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/1427.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,green lights in the living room,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/1649.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,turn the basement lights blue,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/273.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,Eliminate the entrance lights from shining,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/631.wav,f0f71ab4-dd42-43f7-bd05-7d1950326935,Let's change the garage lighting to twenty two.,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/801.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,Make the studio lights off.,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/773.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Make the lights in the kids bedroom a ten.,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/972.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,Reduce the light brightness in the backyard to level ten.,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/826.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,Please change the brightness level in the backyard to fifty.,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/736.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,Make the kids bedroom light red,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/1176.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Turn off the light power,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/763.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Make the lights brighter.,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/742.wav,9f5beac6-1a2a-4d52-bca1-d0eff2f5ae54,Make the laundry room lights red.,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/643.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Lights in the backyard should be red.,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/283.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Get the lights on,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/1226.wav,4e1a0afa-74e0-4d34-a6cd-ae2d96067f0f,Turn on the office lighting,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/1056.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Stop the lights,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/1031.wav,b13f7c89-1aca-46c8-b9c9-0cf3a472e6b3,Set the lights to twenty two in the office,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/377.wav,4373a208-efd7-4eea-9440-94f52145cd78,I want it less bright now,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/1167.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Turn living room lights to red,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/903.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,Please turn off all lights.,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/1501.wav,27bbc36b-3d70-4d5c-998c-803f6ee91c2e,make it lighter in here,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/1091.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,The cellar lights should be turned on.,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/776.wav,61febf20-bc56-49b9-8e3a-e2ec25b362e6,Make the lights in the studio to be at twelve,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/92.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,Can you make the lights green?,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/1520.wav,27bbc36b-3d70-4d5c-998c-803f6ee91c2e,pantry make it dark,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/1115.wav,9f5beac6-1a2a-4d52-bca1-d0eff2f5ae54,The lights in the living room need to be blue.,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/568.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,"In the your cellar, set the brightness of the light bulbs to twelve. ",SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/523.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,I'd like the lights in the laundry room to be at level twenty two,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/450.wav,4e1a0afa-74e0-4d34-a6cd-ae2d96067f0f,I want the lights to be blue in the bathroom,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/692.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Make it so that the light is pink.,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/1377.wav,4373a208-efd7-4eea-9440-94f52145cd78,can you turn off the cellar lights?,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/1577.wav,bfc416c8-6ecd-4c63-a76d-02ea63ab9029,some light,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/1452.wav,9294d77a-9d94-4903-a978-af94ab79c0d9,increase the brightness in the basement.,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/414.wav,550b9155-6601-488b-82c9-d316036fc144,I want the dining room lights to be turned on,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/1570.wav,61febf20-bc56-49b9-8e3a-e2ec25b362e6,set the intensity of the tubelight to two percent,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/797.wav,143921a6-6caa-417f-bd7e-2732023270c1,Make the patio brighter,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/418.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,I want the house lights to be pink.,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/382.wav,ffd85e10-f320-427f-b63e-01e81f768397,I want less light in the waiting room,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/1362.wav,61febf20-bc56-49b9-8e3a-e2ec25b362e6,bedroom light down,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/1578.wav,62c59086-3e46-4c49-85d6-047f69928fc9,some light in the kitchen,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/1534.wav,143921a6-6caa-417f-bd7e-2732023270c1,please increase the meeting room brightness,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/1262.wav,1eef6acf-9a01-41c3-b118-b43ea5de6f9b,Turn the kitchen lights on brighter,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/863.wav,4e0d0b9b-59da-42f8-ace0-5a795c68a7e8,Please make the flat room blue,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/1583.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,switch house lights off.,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/1425.wav,aa5bc53b-9148-4b5f-835f-8653c89bc6ae,gimme lights in the kitchen,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/673.wav,f0f71ab4-dd42-43f7-bd05-7d1950326935,Make adjustments to the studio lighting to twelve.,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/628.wav,4373a208-efd7-4eea-9440-94f52145cd78,Lessen the brightness for me,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/1658.wav,f0f71ab4-dd42-43f7-bd05-7d1950326935,turn the lights to red,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/1133.wav,4373a208-efd7-4eea-9440-94f52145cd78,Turn down lights in entire appartment,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/306.wav,4373a208-efd7-4eea-9440-94f52145cd78,Help me make the light brighter,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/960.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Put the lights on please,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/633.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Let's have the entrance be red,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/840.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Please decrease the brightness,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/1166.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Turn lights to green,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/880.wav,0f9d4a24-4d36-4378-98fd-3ddbe67d2f29,Please set the office to twenty two for the intensity,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/410.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,I want the cellar lights on,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/247.wav,16760ead-20e2-42f7-a62d-3ed356699f7f,Decrease the light intensity in the entrance to zero,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/938.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,"Please, set the brightness of the light bulbs to seventy-three. ",SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/151.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Change lights to blue.,SetLightColor,3
+../smart-lights-en-close-field/speech_corpus/audio/2.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Activate garden lights,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/101.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,Can you please lower the lights for me,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/642.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,Lighting needs to be adjusted to level two in the cubicle,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/1015.wav,83149db9-cf71-4987-886f-f07607ab8f90,Set the laundry room lighting to ten percent,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/634.wav,915b94e4-030e-4ecd-b864-c52ff00f9ebc,Let's lower the intensity of the lights,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/75.wav,bbdc474a-8064-4665-9144-585bfe589908,Can you decrease the brightness in the kids bedroom,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/1183.wav,4e1a0afa-74e0-4d34-a6cd-ae2d96067f0f,Turn off the lights in five minutes,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/670.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Lower the lights on the patio,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/884.wav,546bfda8-9f7d-4cf5-8c44-931e4226ec82,Please shut off the lighting.,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/1579.wav,61febf20-bc56-49b9-8e3a-e2ec25b362e6,some lights in the kitchen,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/141.wav,d74e7c3a-9e2f-40ea-a6da-cf1399adc25c,Change all the lights to fifty.,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/565.wav,61febf20-bc56-49b9-8e3a-e2ec25b362e6,In the pantry turn down the brightness,DecreaseBrightness,0
+../smart-lights-en-close-field/speech_corpus/audio/355.wav,4e1a0afa-74e0-4d34-a6cd-ae2d96067f0f,I need the lights off in the changing room,SwitchLightOff,4
+../smart-lights-en-close-field/speech_corpus/audio/1347.wav,4373a208-efd7-4eea-9440-94f52145cd78,"Will you set the changing room to fifty brightness?
+",SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/1296.wav,550b9155-6601-488b-82c9-d316036fc144,Turn the lights on in the pantry,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/706.wav,1eef6acf-9a01-41c3-b118-b43ea5de6f9b,Make sure the hallway lights are increased in brightness,IncreaseBrightness,1
+../smart-lights-en-close-field/speech_corpus/audio/425.wav,40b461a0-8c0c-42a6-b51c-99b1a8bff054,I want the light in the lounge to turn on,SwitchLightOn,5
+../smart-lights-en-close-field/speech_corpus/audio/875.wav,f0f71ab4-dd42-43f7-bd05-7d1950326935,Please set the brightness level to five,SetLightBrightness,2
+../smart-lights-en-close-field/speech_corpus/audio/1614.wav,bbdc474a-8064-4665-9144-585bfe589908,"the toilets are too bright, turn the lights down",DecreaseBrightness,0
