@@ -440,9 +440,9 @@ def utility(data_dir, resplit_style,utility, utterance_lookup=False,noBLEU=False
     if seed is not None:
         data_str=data_str+"_"+str(seed)
     train_file = os.path.join(data_dir, data_str, "train_data.csv")
-    if resplit_style=="speaker_or_utterance_closed":
-        test_speaker_file = os.path.join(data_dir, data_str, "closed_speaker_test_data.csv")
-        test_utterance_file = os.path.join(data_dir, data_str, "closed_utterance_test_data.csv")
+    if resplit_style=="unseen" or resplit_style=="challenge":
+        test_speaker_file = os.path.join(data_dir, data_str, "speaker_test_data.csv")
+        test_utterance_file = os.path.join(data_dir, data_str, "utterance_test_data.csv")
         test_speaker_set = pd.read_csv(test_speaker_file)
         test_utterance_set = pd.read_csv(test_utterance_file)
     else:
@@ -458,7 +458,7 @@ def utility(data_dir, resplit_style,utility, utterance_lookup=False,noBLEU=False
     else:
         speaker_demo_dict,map_columns=speaker_info(speaker_demographic_file)
     speaker_utility_class=Speaker_Utility(speaker_demo_dict,map_columns)
-    if resplit_style=="speaker_or_utterance_closed":
+    if resplit_style=="unseen" or resplit_style=="challenge":
         if utterance_lookup:
             speaker_utility=speaker_utility_class.get_utility(train_set,test_utterance_set)
         else:
@@ -475,9 +475,9 @@ def error_analysis(data_dir, resplit_style,utility,error_file=None, weights=Fals
     if noBLEU:
         data_str=data_str+"_noBLEU"
     train_file = os.path.join(data_dir, data_str, "train_data.csv")
-    if resplit_style=="speaker_or_utterance_closed":
-        test_speaker_file = os.path.join(data_dir, data_str, "closed_speaker_test_data.csv")
-        test_utterance_file = os.path.join(data_dir, data_str, "closed_utterance_test_data.csv")
+    if resplit_style=="unseen" or resplit_style=="challenge":
+        test_speaker_file = os.path.join(data_dir, data_str, "speaker_test_data.csv")
+        test_utterance_file = os.path.join(data_dir, data_str, "utterance_test_data.csv")
         test_speaker_set = pd.read_csv(test_speaker_file)
         test_utterance_set = pd.read_csv(test_utterance_file)
         if utterance_lookup:
@@ -556,9 +556,9 @@ def compute_entropy(data_dir, resplit_style,utility,error_file=None):
     if utility:
         data_str=data_str+"_utility"
     train_file = os.path.join(data_dir, data_str, "train_data.csv")
-    if resplit_style=="speaker_or_utterance_closed":
-        test_speaker_file = os.path.join(data_dir, data_str, "closed_speaker_test_data.csv")
-        test_utterance_file = os.path.join(data_dir, data_str, "closed_utterance_test_data.csv")
+    if resplit_style=="unseen" or resplit_style=="challenge":
+        test_speaker_file = os.path.join(data_dir, data_str, "speaker_test_data.csv")
+        test_utterance_file = os.path.join(data_dir, data_str, "utterance_test_data.csv")
         test_speaker_set = pd.read_csv(test_speaker_file)
         test_utterance_set = pd.read_csv(test_utterance_file)
     else:
@@ -589,7 +589,7 @@ def compute_entropy(data_dir, resplit_style,utility,error_file=None):
                 tri_entropy-=prob*np.log2(prob)
     print(tri_entropy)
     print((uni_entropy+bi_entropy+tri_entropy)/3)
-    if resplit_style=="speaker_or_utterance_closed":
+    if resplit_style=="unseen" or resplit_style=="challenge":
         unigram_table, unigram_count=get_uniCounts(test_utterance_set)
         bigram_table, num_bigrams, bigram_count=get_biCounts(test_utterance_set)
         trigram_table, num_trigrams, trigram_count=get_triCounts(test_utterance_set)
@@ -626,9 +626,9 @@ def compute_WER(data_dir, resplit_style,utility, noBLEU, transcript_file,utteran
     if noBLEU:
         data_str=data_str+"_noBLEU"
     train_file = os.path.join(data_dir, data_str, "train_data.csv")
-    if resplit_style=="speaker_or_utterance_closed":
-        test_speaker_file = os.path.join(data_dir, data_str, "closed_speaker_test_data.csv")
-        test_utterance_file = os.path.join(data_dir, data_str, "closed_utterance_test_data.csv")
+    if resplit_style=="unseen" or resplit_style=="challenge":
+        test_speaker_file = os.path.join(data_dir, data_str, "speaker_test_data.csv")
+        test_utterance_file = os.path.join(data_dir, data_str, "utterance_test_data.csv")
         if utterance_lookup:
             test_set = pd.read_csv(test_utterance_file)
         else:
@@ -738,9 +738,9 @@ def compute_avg_WER_transcriptions(data_dir, resplit_style,utility,transcript_fi
     if utility:
         data_str=data_str+"_utility"
     train_file = os.path.join(data_dir, data_str, "train_data.csv")
-    if resplit_style=="speaker_or_utterance_closed":
-        test_speaker_file = os.path.join(data_dir, data_str, "closed_speaker_test_data.csv")
-        test_utterance_file = os.path.join(data_dir, data_str, "closed_utterance_test_data.csv")
+    if resplit_style=="unseen" or resplit_style=="challenge":
+        test_speaker_file = os.path.join(data_dir, data_str, "speaker_test_data.csv")
+        test_utterance_file = os.path.join(data_dir, data_str, "utterance_test_data.csv")
         test_set = pd.read_csv(test_speaker_file)
         test_utterance_set = pd.read_csv(test_utterance_file)
     else:
@@ -822,9 +822,9 @@ def compute_intent_KL(data_dir, resplit_style,utility,single_intent=False,noBLEU
         data_str=data_str+"_"+str(seed)
     print(data_str)
     train_file = os.path.join(data_dir, data_str, "train_data.csv")
-    if resplit_style=="speaker_or_utterance_closed":
-        test_speaker_file = os.path.join(data_dir, data_str, "closed_speaker_test_data.csv")
-        test_utterance_file = os.path.join(data_dir, data_str, "closed_utterance_test_data.csv")
+    if resplit_style=="unseen" or resplit_style=="challenge":
+        test_speaker_file = os.path.join(data_dir, data_str, "speaker_test_data.csv")
+        test_utterance_file = os.path.join(data_dir, data_str, "utterance_test_data.csv")
         if utterance_lookup:
             test_set = pd.read_csv(test_utterance_file)
         else:
@@ -865,9 +865,9 @@ def compute_word_length_ratio(data_dir, resplit_style,utility,error_file=None, p
     if seed is not None:
         data_str=data_str+"_"+str(seed)
     train_file = os.path.join(data_dir, data_str, "train_data.csv")
-    if resplit_style=="speaker_or_utterance_closed":
-        test_speaker_file = os.path.join(data_dir, data_str, "closed_speaker_test_data.csv")
-        test_utterance_file = os.path.join(data_dir, data_str, "closed_utterance_test_data.csv")
+    if resplit_style=="unseen" or resplit_style=="challenge":
+        test_speaker_file = os.path.join(data_dir, data_str, "speaker_test_data.csv")
+        test_utterance_file = os.path.join(data_dir, data_str, "utterance_test_data.csv")
         if utterance_lookup:
             test_set = pd.read_csv(test_utterance_file)
         else:
@@ -945,9 +945,9 @@ def compute_WER_KL(data_dir, resplit_style,utility, noBLEU, transcript_file,utte
     if noBLEU:
         data_str=data_str+"_noBLEU"
     train_file = os.path.join(data_dir, data_str, "train_data.csv")
-    if resplit_style=="speaker_or_utterance_closed":
-        test_speaker_file = os.path.join(data_dir, data_str, "closed_speaker_test_data.csv")
-        test_utterance_file = os.path.join(data_dir, data_str, "closed_utterance_test_data.csv")
+    if resplit_style=="unseen" or resplit_style=="challenge":
+        test_speaker_file = os.path.join(data_dir, data_str, "speaker_test_data.csv")
+        test_utterance_file = os.path.join(data_dir, data_str, "utterance_test_data.csv")
         if utterance_lookup:
             test_set = pd.read_csv(test_utterance_file)
         else:
@@ -1086,55 +1086,3 @@ def compute_WER_KL(data_dir, resplit_style,utility, noBLEU, transcript_file,utte
     
     # print(get_speaker_utility_WER(train_set,test_set,transcript_file))
     return
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--data_dir', required=True, help='Path to root of fluent_speech_commands or snips_close_field directory')
-    parser.add_argument('--resplit_style', required=True, choices=['original','random', 'utterance_closed', "speaker_or_utterance_closed", "mutually_closed"], help='Path to root of fluent_speech_commands_dataset directory')
-    parser.add_argument('--utility', action='store_true', help='Calculate for utility driven splits')
-    parser.add_argument('--analysis', action='store_true', help='Analyse the n-gram distribution of splits')
-    parser.add_argument('--ngram_entropy', action='store_true', help='Compute n-gram entropy for train and test splits')
-    parser.add_argument('--compute_WER', action='store_true', help='Compute WER for ASR on the test dataset')
-    parser.add_argument('--compute_WER_KL', action='store_true', help='Compute WER KL Divergence on the split')
-    parser.add_argument('--save_WER', action='store_true', help='Save WER subdivide for ASR on the whole dataset')
-    parser.add_argument('--complete_WER', action='store_true', help='Compute WER for ASR on the complete (train+valid+test) dataset')
-    parser.add_argument('--utterance_lookup', action='store_true', help='Look at closed utterance_split')
-    parser.add_argument('--compute_WER_transcription', action='store_true', help='Compute WER for ASR on the dataset')
-    parser.add_argument('--noBLEU', action='store_true', help='Compute on the dataset not using BLEU for utility')
-    parser.add_argument('--error_file', required=False, default=None, help='Model Error file')
-    parser.add_argument('--transcription_file', required=False, default=None, help='Predicted Transcription file')
-    parser.add_argument('--weights', action='store_true', help='Model Error file')
-    parser.add_argument('--weights_array', required=False, default=None, help='Weights array')
-    parser.add_argument('--compute_length', required=False, default=None, help='Compute word length ratio')
-    parser.add_argument('--length_norm', required=False, default=False, help='Normalise BLEU score with length')
-    parser.add_argument('--compute_intent_KL', required=False, default=None, help='Compute intent KL divergence')
-    parser.add_argument('--perfect', required=False, default=None, help='Compute on perfect split')
-    parser.add_argument('--subdivide_error', required=False, default=None, help='Computes insertion only error(1), substitution only error(2), delete only error(3)')
-    parser.add_argument('--seed', required=False, default=None, help='Seed for creating data dir')
-    parser.add_argument('--single_intent', action='store_true')
-    args = parser.parse_args()
-    if args.analysis:
-        error_analysis(args.data_dir, args.resplit_style, args.utility, args.error_file, args.weights,args.noBLEU,args.weights_array,args.length_norm,utterance_lookup=args.utterance_lookup,autoweight=True)
-    elif args.compute_length:
-        compute_word_length_ratio(args.data_dir, args.resplit_style, args.utility, args.error_file,args.perfect,args.noBLEU,utterance_lookup=args.utterance_lookup,seed=args.seed)
-    elif args.compute_intent_KL:
-        compute_intent_KL(args.data_dir, args.resplit_style, args.utility,args.single_intent,args.noBLEU,utterance_lookup=args.utterance_lookup,seed=args.seed)
-    elif args.ngram_entropy:
-        compute_entropy(args.data_dir, args.resplit_style, args.utility)
-    elif args.save_WER:
-        data_dir, resplit_style,utility,transcript_file,error_file=None
-        save_WER(args.data_dir, args.resplit_style, args.utility, args.transcription_file, int(args.subdivide_error))
-    elif args.compute_WER:
-        if args.subdivide_error is not None:
-            compute_WER(args.data_dir, args.resplit_style, args.utility, args.noBLEU, args.transcription_file, args.utterance_lookup,args.error_file, int(args.subdivide_error),args.complete_WER)
-        else:
-            compute_WER(args.data_dir, args.resplit_style, args.utility, args.noBLEU, args.transcription_file, args.utterance_lookup,args.error_file)
-    elif args.compute_WER_KL:
-        if args.subdivide_error is not None:
-            compute_WER_KL(args.data_dir, args.resplit_style, args.utility, args.noBLEU, args.transcription_file, args.utterance_lookup,args.error_file, int(args.subdivide_error),args.complete_WER)
-        else:
-            compute_WER_KL(args.data_dir, args.resplit_style, args.utility, args.noBLEU, args.transcription_file, args.utterance_lookup,args.error_file)
-    elif args.compute_WER_transcription:
-        compute_avg_WER_transcriptions(args.data_dir, args.resplit_style, args.utility,args.transcription_file, args.error_file)
-    else:
-        utility(args.data_dir, args.resplit_style, args.utility, args.utterance_lookup,args.noBLEU,seed=args.seed)

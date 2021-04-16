@@ -1,7 +1,9 @@
 import pickle
 import numpy as np
 import matplotlib.pyplot as plt
-file_array=["speaker_or_utterance_closed_splits_utility_noBLEU_speaker_WER.pkl","speaker_or_utterance_closed_splits_utility_noBLEU_speaker_error_WER.pkl"]
+import sys
+
+file_array = sys.argv[1:]
 d_array=[]
 for file in file_array:
 	f = open(file,"rb")
@@ -25,5 +27,5 @@ plt.xlabel('Score')
 plt.ylabel('Percentage of Transcripts')
 plt.ylim((0,1.0))
 plt.legend()
-plt.savefig("speaker_or_utterance_closed_splits_utility_noBLEU_WER_nolimit.png")
+plt.savefig("WER_distribution.png")
 plt.show()

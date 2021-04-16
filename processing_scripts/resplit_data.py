@@ -12,10 +12,11 @@ Run:
 python processing_scripts/resplit_data.py \
 --data_dir /home/ec2-user/slu_splits/fluent_speech_commands_dataset  \
 --dataset {fluent_speech_commands, snips} \
---resplit_style {random, utterance_closed, decomposable} {--challenge || --unseen}
+--resplit_style {random, decomposable} {--challenge || --unseen}
 
-Will create a directory called "utterance_closed_splits" or "random_splits" in the supplied data directory.
-Created "random", "utterance_closed", "decomposable" splits have been included in splits_folder for reference
+Will create a directory called "unseen_splits", "challenge_splits", or "random_splits" in the supplied data directory.
+Created "random", "unseen_splits", and "challenge_splits" splits have been included in splits_folder for reference
+(for both Fluent Speech Commands and Snips).
 '''
 
 import argparse
@@ -66,7 +67,7 @@ def select_utterance_groups_to_add_to_test(utterance_groups, ratio_of_groups_to_
         groups_to_add_to_train_val = utterance_groups[number_of_groups_to_include:]
     return groups_to_add_to_test, groups_to_add_to_train_val
 
-def resplit_utterance_closed(concatenated, splits, seed=5, ratio_parameter=8, mantain_length=False,utility=False,lamda=0.4,BLEU=True,ratio=0.12,single_intent=False):
+def resplit_on_utterances(concatenated, splits, seed=5, ratio_parameter=8, mantain_length=False,utility=False,lamda=0.4,BLEU=True,ratio=0.12,single_intent=False):
     '''
     Re-split the concatenated data, to ensure that each unique utterance can only be found in one split
     (train, test, or valid), while maintaining equal distribution of intents and roughly maintaining splits.
@@ -135,10 +136,8 @@ def resplit_decomposable(concatenated,
     intent_utterance_groups = defaultdict(list)
 
     original_test_size = splits[1]
-    closed_speaker_test_set = None
-    closed_speaker_train_val_set = None
-    closed_utterance_test_set = None
-    closed_utterance_train_val_set = None
+    unseen_speaker_test_set = None
+    unseen_speaker_train_val_set = None
 
     # Choose speaker groups uniformly
     concatenated_new=concatenated.copy(deep=True)
@@ -155,8 +154,8 @@ def resplit_decomposable(concatenated,
             groups_to_add_to_test=[]
             for (speaker, group) in test_csv.groupby("speakerId"):
                 groups_to_add_to_test.append(group)
-            closed_speaker_test_set = concatenate_if_exists(closed_speaker_test_set, groups_to_add_to_test)
-            closed_speaker_train_val_set = concatenate_if_exists(closed_speaker_train_val_set, groups_to_add_to_train_val)
+            unseen_speaker_test_set = concatenate_if_exists(unseen_speaker_test_set, groups_to_add_to_test)
+            unseen_speaker_train_val_set = concatenate_if_exists(unseen_speaker_train_val_set, groups_to_add_to_train_val)
         else:
             if use_speaker_utility:
                 if single_intent:
@@ -178,55 +177,55 @@ def resplit_decomposable(concatenated,
                 group_array.append(group)
             groups_to_add_to_test, groups_to_add_to_train_val = utility_selector.fit(group_array)
             print("yes")
-            closed_speaker_test_set = concatenate_if_exists(closed_speaker_test_set, groups_to_add_to_test)
-            closed_speaker_train_val_set = concatenate_if_exists(closed_speaker_train_val_set, groups_to_add_to_train_val)
+            unseen_speaker_test_set = concatenate_if_exists(unseen_speaker_test_set, groups_to_add_to_test)
+            unseen_speaker_train_val_set = concatenate_if_exists(unseen_speaker_train_val_set, groups_to_add_to_train_val)
     else:
         for (speaker, group) in sorted(concatenated.groupby("speakerId"), key=lambda x: len(x[1])):
             disjoint_utterance=False
             concatenated_new= concatenated_new[concatenated_new.speakerId != speaker]
             for k in group.transcription:
                 if (k not in concatenated_new.transcription.values):
-                    if closed_speaker_train_val_set is None:
+                    if unseen_speaker_train_val_set is None:
                         disjoint_utterance=True
-                    elif (k not in closed_speaker_train_val_set.transcription):
+                    elif (k not in unseen_speaker_train_val_set.transcription):
                         disjoint_utterance=True
-            if ((closed_speaker_test_set is None or len(closed_speaker_test_set) < original_test_size - length_tolerance) and (not(disjoint_utterance))):
-                closed_speaker_test_set = concatenate_if_exists(closed_speaker_test_set, [group])
+            if ((unseen_speaker_test_set is None or len(unseen_speaker_test_set) < original_test_size - length_tolerance) and (not(disjoint_utterance))):
+                unseen_speaker_test_set = concatenate_if_exists(unseen_speaker_test_set, [group])
             else:
-                closed_speaker_train_val_set = concatenate_if_exists(closed_speaker_train_val_set, [group])
-    # print(Speaker_Utility_class.get_utility(closed_speaker_train_val_set ,closed_speaker_test_set))
+                unseen_speaker_train_val_set = concatenate_if_exists(unseen_speaker_train_val_set, [group])
+    # print(Speaker_Utility_class.get_utility(unseen_speaker_train_val_set ,unseen_speaker_test_set))
     if BLEU:
         if single_intent:
-            open_train, closed_utterance_test, open_valid = resplit_utterance_closed(closed_speaker_train_val_set, splits, seed=seed, mantain_length=mantain_length, utility=utility,lamda=10.0,BLEU=BLEU,single_intent=single_intent)
+            final_train, unseen_utterance_test, final_valid = resplit_on_utterances(unseen_speaker_train_val_set, splits, seed=seed, mantain_length=mantain_length, utility=utility,lamda=10.0,BLEU=BLEU,single_intent=single_intent)
         else:
-            open_train, closed_utterance_test, open_valid = resplit_utterance_closed(closed_speaker_train_val_set, splits, seed=seed, mantain_length=mantain_length, utility=utility,lamda=5.0,BLEU=BLEU,single_intent=single_intent)
+            final_train, unseen_utterance_test, final_valid = resplit_on_utterances(unseen_speaker_train_val_set, splits, seed=seed, mantain_length=mantain_length, utility=utility,lamda=5.0,BLEU=BLEU,single_intent=single_intent)
     else:
         if single_intent:
-            valid_train_set = closed_speaker_train_val_set.sample(frac=1, random_state=seed).reset_index(drop=True)
+            valid_train_set = unseen_speaker_train_val_set.sample(frac=1, random_state=seed).reset_index(drop=True)
             [og_train_size, og_test_size, og_valid_size] = splits
             new_train_size = int(float(og_train_size) / (og_train_size + og_valid_size) * len(valid_train_set))
-            train_set = closed_speaker_train_val_set.iloc[:new_train_size]
-            valid_set = closed_speaker_train_val_set.iloc[new_train_size:]
-            return train_set, valid_set, None, closed_speaker_test_set
+            train_set = unseen_speaker_train_val_set.iloc[:new_train_size]
+            valid_set = unseen_speaker_train_val_set.iloc[new_train_size:]
+            return train_set, valid_set, None, unseen_speaker_test_set
         else:
-            open_train, closed_utterance_test, open_valid = resplit_utterance_closed(closed_speaker_train_val_set, splits, seed=seed, mantain_length=mantain_length, utility=utility,lamda=50.0,BLEU=BLEU,single_intent=single_intent)
-    closed_speaker_test_set_filter=closed_speaker_test_set.copy()
+            final_train, unseen_utterance_test, final_valid = resplit_on_utterances(unseen_speaker_train_val_set, splits, seed=seed, mantain_length=mantain_length, utility=utility,lamda=50.0,BLEU=BLEU,single_intent=single_intent)
+    unseen_speaker_test_set_filtered=unseen_speaker_test_set.copy()
     if not(single_intent):
-        for k in closed_speaker_test_set_filter.transcription:
-            if k not in open_train.transcription.values:
-                closed_speaker_test_set_filter=closed_speaker_test_set_filter[closed_speaker_test_set_filter.transcription !=k]
+        for k in unseen_speaker_test_set_filtered.transcription:
+            if k not in final_train.transcription.values:
+                unseen_speaker_test_set_filtered=unseen_speaker_test_set_filtered[unseen_speaker_test_set_filtered.transcription !=k]
     print("Test WER Score")
     if single_intent:
-        utility=get_speaker_utility_WER(open_train,closed_speaker_test_set_filter,transcript_file="gcloud_snips_transcription.csv")
+        utility=get_speaker_utility_WER(final_train,unseen_speaker_test_set_filtered,transcript_file="gcloud_snips_transcription.csv")
     else:
-        utility=get_speaker_utility_WER(open_train,closed_speaker_test_set_filter)
+        utility=get_speaker_utility_WER(final_train,unseen_speaker_test_set_filtered)
     # print(utility)
-    # utility=get_speaker_utility_WER(open_train,closed_speaker_test_set_filter,subdivide_error=2)
+    # utility=get_speaker_utility_WER(final_train,unseen_speaker_test_set_filtered,subdivide_error=2)
     print(utility)
     if use_speaker_utility:
         print("Test Speaker Utility")
-        print(Speaker_Utility_class.get_utility(open_train,closed_speaker_test_set_filter))
-    return open_train, open_valid, closed_utterance_test, closed_speaker_test_set_filter
+        print(Speaker_Utility_class.get_utility(final_train,unseen_speaker_test_set_filtered))
+    return final_train, final_valid, unseen_utterance_test, unseen_speaker_test_set_filtered
 
 
 
@@ -256,7 +255,7 @@ def try_diff_train_valid(splits):
     return train_set_arr, valid_set_arr
 
 def main(data_dir, resplit_style, use_speaker_utility, dataset, utility=True, challenge=True, single_intent=False, mantain_length=False, replace=False,use_ins_del_diff=False,remove_absolute=False,add_utterance=False, try_diff_seed=False, seed=5):
-    # dataset is either fluent_speech_commands or snips_closed_field.
+    # Dataset is either fluent_speech_commands or snips_close_field.
     original_splits, concatenated_data, original_split_sizes = load_data(data_dir)
     [original_train, original_test, original_valid] = original_splits
     # print(single_intent)
@@ -294,12 +293,7 @@ def main(data_dir, resplit_style, use_speaker_utility, dataset, utility=True, ch
                 print(f"Wrote file to {path}.")
                 data.to_csv(path, index=True)
         return
-    if resplit_style == "utterance_closed":
-        if challenge:
-            train, test, valid = resplit_utterance_closed(concatenated_data, original_split_sizes, seed=seed, ratio_parameter=5, mantain_length=mantain_length, utility=utility,lamda=5.0, BLEU=True)
-        else:
-            train, test, valid = resplit_utterance_closed(concatenated_data, original_split_sizes, seed=seed, ratio_parameter=5, mantain_length=mantain_length, utility=utility,lamda=25.0, BLEU=False)
-    elif resplit_style == "decomposable":
+    if resplit_style == "decomposable":
         if single_intent:
             speaker_demographic_file=os.path.join("snips_slu_data_v1.0/smart-lights-en-close-field/speech_corpus/metadata.json")
         else:
@@ -369,7 +363,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_dir', required=True, help='Path to root of dataset directory (either FSC or Snips)')
     parser.add_argument('--dataset', required=True, choices=["fluent_speech_commands", "snips"], help="Type of dataset to generate splits for.")
-    parser.add_argument('--resplit_style', required=True, choices=['random', 'utterance_closed', "decomposable"], help='Path to root of fluent_speech_commands_dataset directory')
+    parser.add_argument('--resplit_style', required=True, choices=['random', 'decomposable'], help='Path to root of fluent_speech_commands_dataset directory')
     parser.add_argument('--unseen', required=False, action='store_true', help="Whether to create unseen splits")
     parser.add_argument('--challenge', required=False, action='store_true', help="Whether to create challenge splits")
     parser.add_argument('--utility', action='store_true')
