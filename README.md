@@ -6,7 +6,7 @@ All the code in this repo will require you to have a copy of the Fluent Speech C
 **Fluent Speech Commands** (FSC) was introduced by [Lugosch et al](https://arxiv.org/pdf/1904.03670.pdf) [1]), and can be downloaded [here](
 https://fluent.ai/fluent-speech-commands-a-dataset-for-spoken-language-understanding-research/).
 
-**Snips SmartLights** was introduced by [Coucke et al](https://arxiv.org/pdf/1810.12735.pdf), and access can be requested [here](https://github.com/sonos/spoken-language-understanding-research-datasets). To simplify things, we have converted the Snips dataset into the FSC format - this data can be found under `slu_splits/snips_close_field/original_splits`. To comply with their license, we do not include the actual audio files.
+**Snips SmartLights** was introduced by [Coucke et al](https://arxiv.org/pdf/1810.12735.pdf), and access can be requested [here](https://github.com/sonos/spoken-language-understanding-research-datasets). To simplify things, we have converted the Snips dataset into the FSC format - this data can be found under `slu_splits/snips_close_field/original_splits`. To comply with their license, we do not include the actual audio files. When you download Snips data, move the `snips_slu_data_v1.0` folder into the root of this directory, and copy `slu_splits/snips_close_field/*` into `snips_slu_data_v1.0`.
 
 
 # Resplit Data

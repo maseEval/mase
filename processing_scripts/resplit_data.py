@@ -26,7 +26,7 @@ def load_data(data_dir):
     test_file = os.path.join(data_dir, "data", "test_data.csv")
     valid_file = os.path.join(data_dir, "data", "valid_data.csv")
     if not (os.path.isfile(train_file) and os.path.isfile(test_file) and os.path.isfile(valid_file)):
-        from IPython import embed; embed(); raise ValueError("!")
+        breakpoint()
         raise ValueError("Could not find train_data.csv, test_data.csv, or valid_data.csv in supplied data directory.")
 
     train_set = pd.read_csv(train_file)
