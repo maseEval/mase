@@ -1,6 +1,6 @@
-# Fluent-Speech-Commands
+# Multi-Aspect Subtask Evaluation (MASE)
 
-# Dataset
+## Datasets
 All the code in this repo will require you to have a copy of the Fluent Speech Commands dataset or the Snips SmartLights Dataset.
 
 **Fluent Speech Commands** (FSC) was introduced by [Lugosch et al](https://arxiv.org/pdf/1904.03670.pdf) [1]), and can be downloaded [here](
@@ -9,7 +9,7 @@ https://fluent.ai/fluent-speech-commands-a-dataset-for-spoken-language-understan
 **Snips SmartLights** was introduced by [Coucke et al](https://arxiv.org/pdf/1810.12735.pdf), and access can be requested [here](https://github.com/sonos/spoken-language-understanding-research-datasets). To simplify things, we have converted the Snips dataset into the FSC format - this data can be found under `slu_splits/snips_close_field/original_splits`. To comply with their license, we do not include the actual audio files. When you download Snips data, move the `snips_slu_data_v1.0` folder into the root of this directory, and copy `slu_splits/snips_close_field/*` into `snips_slu_data_v1.0`.
 
 
-# Resplit Data
+## Resplit Data
 To generate the "Unseen Splits" described in our paper for FSC, run:
 `python processing_scripts/resplit_data.py --data_dir <PATH_TO_FSC_DATASET> --dataset fluent_speech_commands --resplit_style decomposable --challenge`
 
@@ -20,7 +20,7 @@ To generate these splits for Snips, replace `<PATH_TO_FSC_DATASET>` with the pat
 
 Then, a new directory with name "unseen_splits" or "challenge_splits" will be created within the provided dataset path.
 
-# Train end-to-end SLU models
+## Train end-to-end SLU models
 Train end-to-end SLU models used in the papers "[Speech Model Pre-training for End-to-End Spoken Language Understanding](https://arxiv.org/abs/1904.03670)" and "[Using Speech Synthesis to Train End-to-End Spoken Language Understanding Models](https://arxiv.org/abs/1910.09463)".
 
 On original splits for FSC, run-
@@ -39,7 +39,20 @@ To add semantic word embeddings to the SLU system, use the following command-
 
 These commands can be run with any model training config (e.g. `no_unfreezing` or `unfreeze_word_layers`). Just make sure you update the training config such that `slu_path` points to your local dataset directory.
 
-# References:
+## References:
 [1] Loren Lugosch,  Mirco Ravanelli,  Patrick Ignoto,  Vikrant Tomar,  and Yoshua Bengio.   Speech model pre-training for end-to-end spoken language understanding. pages 814–818, 09 2019. doi:10.21437/Interspeech.2019-2396.
 
 [2] Alaa Saade, Alice Coucke, Alexandre Caulier, Joseph Dureau, Adrien Ball, Théodore Bluche, David Leroy, Clément Doumouro, Thibault Gisselbrecht, Francesco Caltagirone, Thibaut Lavril, and Maël Primet.  Spoken  language  understanding  on  the  edge. Energy Efficient Machine Learning and Cognitive Computing workshop, NeurIPS. 2019
+
+## Cite This Work
+```
+@inproceedings{Interspeech21mase,
+    title = { Rethinking End-to-End Evaluation of Decomposable Tasks: A Case Study on Spoken Language Understanding},
+    author = {Siddhant Arora and Alissa Ostapenko and Vijay Viswanathan and Siddharth Dalmia and Florian Metze and Shinji Watanabe and Alan W Black},
+    booktitle = {22nd Annual Conference of the International Speech Communication Association (Interspeech 2021)},
+    address = {Brno, Czech Republic},
+    month = {August},
+    year = {2021}
+}
+```
+
